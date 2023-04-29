@@ -1,0 +1,11 @@
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\bin\Debug\TSW3_RVN_Creator.exe.config
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\bin\Debug\TSW3_RVN_Creator.exe
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\bin\Debug\TSW3_RVN_Creator.pdb
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.csproj.AssemblyReference.cache
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.csproj.SuggestedBindingRedirects.cache
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.Form1.resources
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.Properties.Resources.resources
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.csproj.GenerateResource.cache
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.csproj.CoreCompileInputs.cache
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.exe
+C:\Users\space\source\repos\TSW3_RVN_Creator\TSW3_RVN_Creator\obj\Debug\TSW3_RVN_Creator.pdb
