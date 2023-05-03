@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -13,28 +7,17 @@ namespace TSW3_RVN_Creator
 {
     public partial class Form1 : Form
     {
-        private string stringInput;
-        private string[] linesInput;
+        private string[] linesInput; // The array for the entered numbers
 
-        private string unrealEngineString;
+        private string unrealEngineString; // The variable that holds the created text for UE4
 
-        List<int> unitNumbers = new List<int>();
+        List<int> unitNumbers = new List<int>(); // Creates a list for the unit numbers
 
-        string allowedChars = @"^[0-9\-]+$";
+        string allowedChars = @"^[0-9\-\,]+$"; // Allows only certain characters to be used in the numbers
 
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void NumberEnter_TB_TextChanged(object sender, EventArgs e)
-        {
-            stringInput = NumberEnter_TB.Text;
-        }
-
-        private void Generated_TB_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -43,15 +26,13 @@ namespace TSW3_RVN_Creator
             linesInput = new string[0];
             unitNumbers = new List<int>();
 
-            stringInput = NumberEnter_TB.Text; // Sets the stringInput
-
-            linesInput = stringInput.Split('\n'); // Splits up the lines based on the line breaks
+            linesInput = NumberEnter_TB.Text.Split('\n'); // Splits up the lines based on the line breaks
 
             // Trims off some annoying chars >:(
             for (int x = 0; x < linesInput.Length; x++)
             {
                 linesInput[x] = linesInput[x].Trim('\r');
-                linesInput[x] = linesInput[x].Trim(' ');
+                linesInput[x] = linesInput[x].Replace(" ", "");
             }
 
             // Idiot proofing
@@ -66,13 +47,23 @@ namespace TSW3_RVN_Creator
                         // Checks if it's a number range or not
                         if (line.Contains("-"))
                         {
-                            // makes an array to split between the ranges before counting between them
-                            string[] range = line.Split('-'); 
+                            // makes an array to split between the ranges before counting between them, also triming out ,
+                            string[] range = line.Replace(',', '\0').Split('-'); 
                             int start = int.Parse(range[0]);
                             int end = int.Parse(range[1]);
                             for (int i = start; i <= end; i++)
                             {
                                 unitNumbers.Add(i);
+                            }
+                        }
+                        else if (line.Contains(","))
+                        {
+                            // makes an array to split between the , before adding between them, also triming out -
+                            string[] numbers = line.Replace('-', '\0').Split(',');
+
+                            for (int i = 0; i < numbers.Length; i++)
+                            {
+                                unitNumbers.Add(int.Parse(numbers[i]));
                             }
                         }
                         else
@@ -107,6 +98,22 @@ namespace TSW3_RVN_Creator
 
                 Generated_TB.Text = unrealEngineString; // outputs the generated string
             }
+        }
+
+        // Things past here I don't know how to remove
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberEnter_TB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Generated_TB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
